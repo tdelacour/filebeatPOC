@@ -17,5 +17,10 @@ make runServer
 ```
 in another tab
 ```
-make runFilebeat
+make runFilebeat /path/to/logfiles
+```
+For example, if a couple of processes are logging to /var/log/log1 and /var/log/log2
+you would run
+```
+make runFilebeat /var/log/log*
 ```
