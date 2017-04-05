@@ -1,0 +1,6 @@
+# binaries
+httpServer
+libFilebeatTest
+
+# generated at runtime
+registry
