@@ -7,7 +7,7 @@ in this repository.
 
 ## Setup
 - Place this repository under $GOPATH/src/github.com/tdelacour/
-- Clone my fork of beats (github.com/tdelacour/beats) and place under
+- Clone my fork of beats (https://github.com/tdelacour/beats.git) and place under
 $GOPATH/src/github.com/elastic/
 
 ## To run
