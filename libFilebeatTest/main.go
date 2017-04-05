@@ -24,7 +24,7 @@ var config = &cfg.Config{
 }
 
 func main() {
-	if len(os.Args) < 1 {
+	if len(os.Args) < 2 {
 		fmt.Printf("please provide glob path to logfiles. Exiting.\n")
 		os.Exit(1)
 	}
@@ -60,7 +60,7 @@ func initConfig() error {
 	prospectorConfig, err := common.NewConfigFrom(map[string]interface{}{
 		"enabled":    true,
 		"input_type": "log",
-		"paths":      []string{"/data/cloudp21328*/log"},
+		"paths":      []string{os.Args[1]},
 	})
 	if err != nil {
 		fmt.Printf("Unable to create Prospectors config field: %v\n", err)
