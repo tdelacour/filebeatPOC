@@ -13,7 +13,7 @@ runServer:
 	./bin/httpServer
 
 runFilebeat:
-	./bin/filebeatTest
+	./bin/filebeatTest $(glob)
 
 clean:
 	rm -r bin

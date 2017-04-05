@@ -17,10 +17,10 @@ make runServer
 ```
 in another tab
 ```
-make runFilebeat /path/to/logfiles
+make glob='/path/to/logfiles' runFilebeat
 ```
 For example, if a couple of processes are logging to /var/log/log1 and /var/log/log2
 you would run
 ```
-make runFilebeat /var/log/log*
+make glob='/var/log/log*' runFilebeat
 ```
