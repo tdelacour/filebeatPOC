@@ -3,3 +3,6 @@ bin/*
 
 # generated at runtime
 registry
+
+# swp files
+*.swp
