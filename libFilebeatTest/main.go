@@ -89,7 +89,7 @@ func run(done chan struct{}) {
 
 	mSpooler, err := mspooler.New(registrarChannel, config)
 	if err != nil {
-		fmt.Printf("Unable to initialize mongo-automation spooler: %v\n", err)
+		fmt.Printf("Unable to initialize mspooler: %v\n", err)
 		os.Exit(1)
 	}
 

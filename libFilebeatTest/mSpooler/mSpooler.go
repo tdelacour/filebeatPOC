@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	mSpoolerStoppedErr = errors.New("the mongo-automation spooler was stopped")
+	mSpoolerStoppedErr = errors.New("the mspooler was stopped")
 )
 
 // Number of events the spooler can bugger before blocking
@@ -41,7 +41,7 @@ func New(out publisher.SuccessLogger, config *cfg.Config) (*Mspooler, error) {
 
 func (m *Mspooler) Start() {
 	m.wg.Add(1)
-	fmt.Printf("Starting mongo-automation spooler\n")
+	fmt.Printf("Starting mspooler\n")
 	go m.run()
 }
 
@@ -89,7 +89,7 @@ func (m *Mspooler) queue(event *input.Data) (bool, error) {
 	flushed := false
 	m.spool = append(m.spool, event)
 	if len(m.spool) == cap(m.spool) {
-		fmt.Printf("Flushing mongo-automation spooler because buffer full. Flushed: %d\n", m.spoolSize)
+		fmt.Printf("Flushing mspooler because buffer full. Flushed: %d\n", m.spoolSize)
 		err := m.flush()
 		if err != nil {
 			return flushed, err
@@ -129,7 +129,7 @@ func (m *Mspooler) post(batch []*input.Data) error {
 }
 
 func (m *Mspooler) Stop() {
-	fmt.Printf("Stopping mongo spooler\n")
+	fmt.Printf("Stopping mspooler\n")
 
 	close(m.Channel)
 
