@@ -1,6 +1,5 @@
 # binaries
-httpServer
-libFilebeatTest
+bin/*
 
 # generated at runtime
 registry

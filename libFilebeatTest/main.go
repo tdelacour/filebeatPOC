@@ -24,6 +24,11 @@ var config = &cfg.Config{
 }
 
 func main() {
+	if len(os.Args) < 1 {
+		fmt.Printf("please provide glob path to logfiles. Exiting.\n")
+		os.Exit(1)
+	}
+
 	if err := initConfig(); err != nil {
 		os.Exit(1)
 	}
